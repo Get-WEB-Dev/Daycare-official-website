@@ -1,0 +1,21 @@
+{
+  "name": "Hopes and Dreams Daycare",
+  "short_name": "Daycare",
+  "description": "A joyful daycare in Bole Michael for children 6 months to 5 years",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#4f46e5",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

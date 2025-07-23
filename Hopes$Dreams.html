@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hopes and Dreams Daycare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #7c3aed;
+            --accent: #facc15;
+        }
+        
+        /* ✨ Special Enhanced Styles ✨ */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                            url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .about-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                            url('seven-benefits-of-outdoor-play-for-children1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .contact-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                            url('childrens-day--second-sunday-in-june.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Special Navigation */
+        .nav-container {
+            backdrop-filter: blur(10px);
+            background: rgba(79, 70, 229, 0.85);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-button {
+            position: relative;
+            padding: 12px 24px;
+            margin: 0 8px;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+            border-radius: 50px;
+        }
+        
+        .nav-button:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .active-nav {
+            background: white;
+            color: var(--primary);
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Special CTA Button */
+        .magic-button {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .magic-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                            transparent, 
+                            rgba(255, 255, 255, 0.3), 
+                            transparent);
+            transform: rotate(45deg);
+            z-index: -1;
+            transition: all 0.6s ease;
+        }
+        
+        .magic-button:hover::before {
+            left: 100%;
+        }
+        
+        /* Floating Elements */
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Sparkle Effects */
+        .sparkle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-bg, .about-bg, .contact-bg {
+                background-attachment: scroll;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-button {
+                width: 100%;
+                margin: 5px 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-blue-50 to-yellow-50 font-['Poppins'] scroll-smooth">
+    <!-- Special Navigation -->
+    <nav class="nav-container text-white p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3 mb-4 md:mb-0 animate__animated animate__fadeInLeft">
+                <img src="image.jpg" alt="Daycare Logo" class="logo w-12 h-12 object-contain floating">
+                <h1 class="text-2xl md:text-3xl font-bold font-['Comic_Neue']">Hopes and Dreams Daycare</h1>
+            </div>
+            <div class="nav-buttons flex flex-wrap justify-center animate__animated animate__fadeInRight">
+                <a href="#home" class="nav-button smooth-scroll active-nav">Home</a>
+                <a href="#about" class="nav-button smooth-scroll">About Us</a>
+                <a href="#why-choose-us" class="nav-button smooth-scroll">Why Choose Us</a>
+                <a href="#contact" class="nav-button smooth-scroll">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Home Section -->
+    <section id="home" class="hero-bg py-24 md:py-32 text-center text-white animate-pulse-slow relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold font-['Comic_Neue'] mb-4">Hopes and Dreams Daycare</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">A joyful place where little dreamers grow, learn, and sparkle through play, creativity, and love!</p>
+            <a href="#contact" class="smooth-scroll magic-button cta-button bg-yellow-400 text-indigo-800 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 animate__animated animate__pulse animate__infinite">
+                Enroll Your Child Today!
+            </a>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-blue-100 opacity-50"></div>
+    </section>
+
+
+
+        <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 about-bg text-white relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 font-['Comic_Neue']">About Our Daycare</h2>
+            <p class="text-lg mb-8 text-center max-w-3xl mx-auto">
+                At Hopes and Dreams Daycare, we nurture young minds with love and creativity. Located in the heart of Bole Michael, our programs inspire curiosity through art workshops, music classes, and outdoor adventures, tailored for children aged 6 months to 5 years.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
+                <div class="card bg-yellow-100 p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-xl md:text-2xl font-semibold text-indigo-600 font-['Comic_Neue']">🌍 Our Location</h3>
+                    <p class="text-gray-600">Bole Michael - A safe, welcoming space for your child's growth.</p>
+                </div>
+                <div class="card bg-yellow-100 p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-xl md:text-2xl font-semibold text-indigo-600 font-['Comic_Neue']">🎉 Opening Soon!</h3>
+                    <p class="text-gray-600">Join us starting October 1 in Bole Michael for a nurturing daycare experience.</p>
+                </div>
+                <div class="card bg-yellow-100 p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-xl md:text-2xl font-semibold text-indigo-600 font-['Comic_Neue']">👶 Ages 6M–5Y</h3>
+                    <p class="text-gray-600">Programs designed for every stage of early childhood development.</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-purple-100 opacity-50"></div>
+    </section>
+
+
+
+        <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-16 md:py-24 bg-indigo-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-indigo-800 text-center mb-8 font-['Comic_Neue']">Why Hopes and Dreams?</h2>
+            <p class="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+                We offer a unique blend of fun, learning, and care, ensuring every child thrives in a supportive environment.
+            </p>
+            <ul class="list-none text-lg text-gray-700 max-w-2xl mx-auto space-y-4">
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-yellow-400 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.5 3 2-6.5L2 7h6.5L10 1l1.5 6H18l-4.5 4.5 2 6.5z"/></svg>
+                    Creative art workshops to spark imagination and self-expression.
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-yellow-400 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.5 3 2-6.5L2 7h6.5L10 1l1.5 6H18l-4.5 4.5 2 6.5z"/></svg>
+                    Music and movement classes to foster rhythm and coordination.
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-yellow-400 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.5 3 2-6.5L2 7h6.5L10 1l1.5 6H18l-4.5 4.5 2 6.5z"/></svg>
+                    Outdoor play areas for physical health and joyful adventures.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <!-- Services / Programs Section -->
+    <section id="services" class="py-20 px-6 bg-pink-50 text-center">
+        <div class="flex justify-center mb-6">
+            <img src="image.jpg"
+                alt="Hopes and Dreams Daycare Logo"
+                class="w-32 md:w-40 lg:w-48 rounded-xl shadow-lg hover:scale-105 transition duration-300 cursor-pointer" />
+        </div>
+        <h3 class="text-3xl font-bold text-pink-700 mb-8 font-['Comic_Neue']">Our Programs</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white shadow-md p-6 rounded-lg hover:shadow-xl transition transform hover:-translate-y-1 hover:bg-yellow-50 cursor-pointer">
+                <h4 class="text-xl font-bold mb-2 text-pink-600">Infants</h4>
+                <p class="text-gray-600">Loving care for babies with nurturing attention and early development activities.</p>
+            </div>
+            <div class="bg-white shadow-md p-6 rounded-lg hover:shadow-xl transition transform hover:-translate-y-1 hover:bg-yellow-50 cursor-pointer">
+                <h4 class="text-xl font-bold mb-2 text-pink-600">Toddlers</h4>
+                <p class="text-gray-600">Guided discovery through play, songs, and creative expression for 1-3 year olds.</p>
+            </div>
+            <div class="bg-white shadow-md p-6 rounded-lg hover:shadow-xl transition transform hover:-translate-y-1 hover:bg-yellow-50 cursor-pointer">
+                <h4 class="text-xl font-bold mb-2 text-pink-600">Pre-K</h4>
+                <p class="text-gray-600">Preparing young minds for school with fun academics and confidence-building play.</p>
+            </div>
+        </div>
+    </section>
+
+                
+                <!-- Feature 3 -->
+                <div class="flex flex-col md:flex-row items-center p-6 rounded-xl bg-white shadow-lg transform transition-all hover:scale-[1.02]">
+                    <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                        <div class="text-6xl">📚</div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-3">Early Literacy Program</h3>
+                        <p class="text-gray-700">Our storytime sessions and language activities give children a head start on reading readiness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 contact-bg text-white text-center relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 font-['Comic_Neue']">Join Our Daycare Family</h2>
+            <p class="text-lg mb-8 max-w-3xl mx-auto">
+                At Hopes and Dreams Daycare, we're excited to nurture your child's growth and create lasting memories. Contact us to learn more about our programs!
+            </p>
+            <p class="text-lg mb-6">
+                Email us at <a href="mailto:info@hopesanddreamsdaycare.com" class="text-yellow-400 hover:underline cursor-pointer">info@hopesanddreamsdaycare.com</a> or call <a href="tel:+1234567890" class="text-yellow-400 hover:underline cursor-pointer">(123) 456-7890</a>.
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1_4kU9MUwyp3LEGd0huQIoo5p8-4NCJ4ddb4DCAz_cAioSQ/viewform" 
+                   target="_blank"
+                   class="mt-8 inline-block magic-button cta-button bg-yellow-400 text-indigo-800 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                    Start Your Enrollment Now
+                </a>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-blue-100 opacity-50"></div>
+    </section>
+
+
+<!-- Footer -->
+    <footer class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-8 text-center footer-pattern">
+        <div class="flex justify-center items-center mb-4 space-x-4">
+            <a href="https://facebook.com" target="_blank" class="text-yellow-400 hover:scale-110 transition-transform cursor-pointer"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.36 7.2h-1.68c-.24 0-.48.24-.48.48v1.68h2.16l-.24 2.16h-1.92v5.52h-2.4v-5.52H8.64V11.4h2.16V9.36c0-1.92 1.2-3.12 3.12-3.12h1.92v2.16z"/></svg></a>
+            <a href="https://twitter.com" target="_blank" class="text-yellow-400 hover:scale-110 transition-transform cursor-pointer"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.28 7.2c0 4.8-3.6 10.32-10.32 10.32-2.04 0-3.96-.6-5.52-1.68.24 0 .48.12.72.12 1.44 0 2.88-.48 3.96-1.32-1.32 0-2.52-.96-2.88-2.28.24.12.36.12.6.12.24 0 .48 0 .72-.12-1.44-.36-2.52-1.56-2.52-3.12v-.12c.48.24 1.08.48 1.68.48-1.08-.72-1.68-1.92-1.68-3.36 0-.72.12-1.44.48-2.04 1.8 2.28 4.56 3.84 7.56 4.08-.12-.36-.24-.72-.24-1.08 0-2.64 2.16-4.8 4.8-4.8 1.44 0 2.76.6 3.6 1.56.84-.12 1.68-.48 2.4-.84-.24.84-.84 1.56-1.56 2.04.72-.12 1.44-.36 2.04-.72-.48.72-1.08 1.44-1.8 1.92z"/></svg></a>
+            <a href="https://instagram.com" target="_blank" class="text-yellow-400 hover:scale-110 transition-transform cursor-pointer"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.8 5.28c.12 0 .24 0 .36.12.84.36 1.56 1.08 1.92 1.92.12.36.12.72.12 1.08v4.8c0 .36 0 .72-.12 1.08-.36.84-1.08 1.56-1.92 1.92-.36.12-.72.12-1.08.12h-4.8c-.36 0-.72 0-1.08-.12-.84-.36-1.56-1.08-1.92-1.92-.12-.36-.12-.72-.12-1.08v-4.8c0-.36 0-.72.12-1.08.36-.84 1.08-1.56 1.92-1.92.36-.12.72-.12 1.08-.12h4.8zm-4.8 1.2c-2.64 0-4.8 2.16-4.8 4.8s2.16 4.8 4.8 4.8 4.8-2.16 4.8-4.8-2.16-4.8-4.8-4.8zm0 7.2c-1.32 0-2.4-1.08-2.4-2.4s1.08-2.4 2.4-2.4 2.4 1.08 2.4 2.4-1.08 2.4-2.4 2.4zm4.8-7.2c-.48 0-.84-.36-.84-.84s.36-.84.84-.84.84.36.84.84-.36.84-.84.84z"/></svg></a>
+        </div>
+        <div class="flex justify-center items-center mb-4">
+            <img src="image.jpg" alt="Hopes and Dreams Daycare sparkling star logo" class="logo w-10 h-10 object-contain" loading="lazy">
+        </div>
+        <p class="text-lg">© 2025 Hopes and Dreams Daycare. All rights reserved.</p>
+        <p class="mt-2 text-sm font-['Comic_Neue']">Crafted with <span class="text-yellow-400">✨</span> for our little stars.</p>
+    </footer>
+
+
+
+    <!-- Sparkle Effect Script -->
+    <script>
+        // Active Nav Highlighting
+        document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                // Smooth scroll
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Update active nav
+                document.querySelectorAll('.nav-button').forEach(btn => {
+                    btn.classList.remove('active-nav');
+                });
+                this.classList.add('active-nav');
+            });
+        });
+
+        // Set initial active nav
+        window.addEventListener('load', () => {
+            document.querySelector('.nav-button[href="#home"]').classList.add('active-nav');
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY + 100;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    document.querySelectorAll('.nav-button').forEach(btn => {
+                        btn.classList.remove('active-nav');
+                        if (btn.getAttribute('href') === `#${sectionId}`) {
+                            btn.classList.add('active-nav');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Sparkle effect
+        document.addEventListener('mousemove', function(e) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            
+            // Random size between 2-6px
+            const size = Math.random() * 4 + 2;
+            sparkle.style.width = `${size}px`;
+            sparkle.style.height = `${size}px`;
+            
+            // Position at mouse
+            sparkle.style.left = `${e.pageX}px`;
+            sparkle.style.top = `${e.pageY}px`;
+            
+            // Random animation
+            sparkle.style.animation = `sparkle-fade ${Math.random() * 1 + 0.5}s forwards`;
+            
+            document.body.appendChild(sparkle);
+            
+            // Remove after animation
+            setTimeout(() => {
+                sparkle.remove();
+            }, 500);
+        });
+
+        // Add sparkle fade animation
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes sparkle-fade {
+                0% { opacity: 0; transform: scale(0); }
+                50% { opacity: 1; transform: scale(1); }
+                100% { opacity: 0; transform: scale(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
